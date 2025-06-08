@@ -115,4 +115,4 @@ AI & Robotics Enthusiast | Python Developer
 ---
 
 ## 📜 License
-This project is licensed under the MIT License – feel free to use and adapt with attribution.
+This project is licensed under the Apache 2.0 License.
