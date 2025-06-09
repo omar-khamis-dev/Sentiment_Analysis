@@ -8,15 +8,15 @@ def load_sentiment_model():
     return load_model(model_path)
 
 def main():
-    st.title("مشروع تحليل المشاعر - Sentiment Analysis")
+    st.title("Sentiment Analysis")
 
     model = load_sentiment_model()
 
-    user_input = st.text_area("أدخل نص لتحديد الشعور:", height=150)
+    user_input = st.text_area("Enter text to specify sentiment:", height=150)
 
-    if st.button("تحليل"):
+    if st.button("Analysis"):
         if user_input.strip() == "":
-            st.warning("الرجاء إدخال نص للتحليل.")
+            st.warning("Please enter text for analysis.")
         else:
             cleaned = clean_text(user_input)
 
@@ -26,8 +26,8 @@ def main():
             prediction = classes[top_index]
             confidence = proba[top_index] * 100
 
-            st.markdown(f"### التصنيف: :blue[{prediction}]")
-            st.markdown(f"نسبة الثقة: :green[{confidence:.2f}%]")
+            st.markdown(f"### Classification: :blue[{prediction}]")
+            st.markdown(f"Confidence Percentage: :green[{confidence:.2f}%]")
 
 if __name__ == "__main__":
     main()
